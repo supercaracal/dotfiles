@@ -1,0 +1,13 @@
+[user]
+    name = supercaracal
+    email = supercaracal@yahoo.co.jp
+[diff]
+    external = gitvimdiff
+[pager]
+    diff =
+[alias]
+    logg = log --oneline --format=format:'%cn\t[%h]\t%ar\t%s'
+[color]
+    ui = auto
+[push]
+    default = nothing

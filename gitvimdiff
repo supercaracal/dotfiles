@@ -1,0 +1,3 @@
+#!/bin/bash -x
+
+vimdiff $2 $5
