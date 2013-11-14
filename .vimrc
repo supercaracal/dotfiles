@@ -68,12 +68,10 @@ set noswapfile
 
 set autoindent
 set expandtab
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
-autocmd myvimrc FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd myvimrc FileType eruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd myvimrc FileType cucumber setlocal shiftwidth=2 tabstop=2 softtabstop=2
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
+" autocmd myvimrc FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 set number
 set list
