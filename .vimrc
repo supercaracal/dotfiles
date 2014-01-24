@@ -27,6 +27,7 @@ NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'h1mesuke/vim-alignta'
+NeoBundle 'Align'
 
 filetype plugin indent on
 
