@@ -1,0 +1,4 @@
+export TERM='gnome-256color'
+export PATH="/usr/local/heroku/bin:$HOME/bin:$PATH"
+export TMUX_POWERLINE_SEG_WEATHER_LOCATION='26235342'
+export TMUX_POWERLINE_PATH="$HOME/vcs/tmux-powerline"
