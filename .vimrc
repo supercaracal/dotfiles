@@ -25,7 +25,7 @@ NeoBundle 'taglist.vim'
 NeoBundle 'sakuraiyuta/commentout.vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'h1mesuke/vim-alignta'
 
 filetype plugin indent on
@@ -55,10 +55,7 @@ set cmdheight=2
 set laststatus=2
 set showcmd
 
-if (1)
-  let g:Powerline_symbols='fancy'
-else
-  let g:Powerline_loaded=0
+if (0)
   set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 endif
 
