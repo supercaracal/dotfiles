@@ -9,7 +9,7 @@ shopt -u histappend
 # exports
 export HISTSIZE=10000
 
-if [[-n $(find /usr/share/terminfo -name 'gnome-256color') ]]; then
+if [[ -n $(find /usr/share/terminfo -name 'gnome-256color') ]]; then
   export TERM='gnome-256color'
 fi
 
@@ -30,16 +30,12 @@ if [[ -d $HOME/vcs/nvm/v0.10.5/lib/node_modules ]]; then
   export NODE_PATH="$HOME/vcs/nvm/v0.10.5/lib/node_modules"
 fi
 
-if [[ -d $HOME/.rbenv/bin -a -d $HOME/.rbenv/shims ]]; then
+if [ -d "$HOME/.rbenv/bin" -a -d "$HOME/.rbenv/shims" ]; then
   export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
 fi
 
 if [[ -d /usr/lib/jvm/java-7-oracle ]]; then
   export JAVA_HOME="/usr/lib/jvm/java-7-oracle"
-fi
-
-if [[ -d $HOME/.rbenv/bin -a -d $HOME/.rbenv/shims ]]; then
-  export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
 fi
 
 # aliases
