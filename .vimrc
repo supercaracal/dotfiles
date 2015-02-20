@@ -19,12 +19,22 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 call neobundle#end()
 
-NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/vimproc.vim', {
+\ 'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make -f make_mac.mak',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
+
 NeoBundle 'gmarik/vundle'
 NeoBundle 'taglist.vim'
 NeoBundle 'sakuraiyuta/commentout.vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'h1mesuke/vim-alignta'
 
@@ -33,10 +43,7 @@ filetype plugin indent on
 NeoBundleCheck
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-augroup myvimrc
-  autocmd!
-augroup END
-
+set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp932,euc-jp,latin1,default
 set backspace=indent,eol,start
 
@@ -55,10 +62,6 @@ set cmdheight=2
 set laststatus=2
 set showcmd
 
-if (0)
-  set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
-endif
-
 set nowrap
 set nobackup
 set noswapfile
@@ -68,7 +71,6 @@ set expandtab
 set shiftwidth=2
 set tabstop=2
 set softtabstop=2
-" autocmd myvimrc FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 set number
 set list
@@ -79,13 +81,7 @@ set incsearch
 set ignorecase
 set wildignorecase
 
-function! ShowJpSpace()
-  syntax match JpSpace "　" display containedin=ALL
-  highlight JpSpace term=underline ctermbg=Blue guibg=darkgray gui=underline
-endf
-au BufRead,BufNew * call ShowJpSpace()
-
-set tags=~/tags
+set tags=~/.tags
 
 let g:neocomplcache_enable_at_startup=1
 let g:neocomplcache_enable_smart_case=1
