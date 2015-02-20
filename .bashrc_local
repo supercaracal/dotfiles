@@ -1,4 +1,64 @@
-export TERM='gnome-256color'
-export PATH="/usr/local/heroku/bin:$HOME/bin:$PATH"
-export TMUX_POWERLINE_SEG_WEATHER_LOCATION='26235342'
-export TMUX_POWERLINE_PATH="$HOME/vcs/tmux-powerline"
+function share_history {
+  history -a
+  history -c
+  history -r
+}
+
+shopt -u histappend
+
+# exports
+export HISTSIZE=10000
+
+if [[-n $(find /usr/share/terminfo -name 'gnome-256color') ]]; then
+  export TERM='gnome-256color'
+fi
+
+if [[ -d $HOME/bin ]]; then
+  export PATH="$HOME/bin:$PATH"
+fi
+
+if [[ -d /usr/local/heroku/bin ]]; then
+  export PATH="/usr/local/heroku/bin:$PATH"
+fi
+
+if [[ -d $HOME/vcs/tmux-powerline ]]; then
+  export TMUX_POWERLINE_SEG_WEATHER_LOCATION='26235342'
+  export TMUX_POWERLINE_PATH="$HOME/vcs/tmux-powerline"
+fi
+
+if [[ -d $HOME/vcs/nvm/v0.10.5/lib/node_modules ]]; then
+  export NODE_PATH="$HOME/vcs/nvm/v0.10.5/lib/node_modules"
+fi
+
+if [[ -d $HOME/.rbenv/bin -a -d $HOME/.rbenv/shims ]]; then
+  export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
+fi
+
+if [[ -d /usr/lib/jvm/java-7-oracle ]]; then
+  export JAVA_HOME="/usr/lib/jvm/java-7-oracle"
+fi
+
+if [[ -d $HOME/.rbenv/bin -a -d $HOME/.rbenv/shims ]]; then
+  export PATH="$HOME/.rbenv/bin:$HOME/.rbenv/shims:$PATH"
+fi
+
+# aliases
+alias vi='vim'
+alias ll='ls -alF'
+
+if [[ -x $HOME/bin/git ]]; then
+  alias git="$HOME/bin/git"
+fi
+
+if [[ -x $HOME/bin/vim ]]; then
+  alias vim="$HOME/bin/vim"
+fi
+
+if [[ -x $HOME/bin/ctags ]]; then
+  alias ctags="$HOME/bin/ctags"
+fi
+
+# sources
+if [[ -f $HOME/vcs/nvm/nvm.sh ]]; then
+  source "$HOME/vcs/nvm/nvm.sh"
+fi
