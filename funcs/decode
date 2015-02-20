@@ -1,0 +1,9 @@
+#!/bin/bash
+
+function decode_multibyte_chars() {
+  local str=$1
+  if [ -z "${str}" ]; then
+    return
+  fi
+  echo ${str} | perl -nle 's/\\x(..)/pack("C",hex($1))/eg;print $_'
+}
