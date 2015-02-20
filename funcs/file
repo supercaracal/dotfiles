@@ -1,0 +1,11 @@
+#!/bin/bash
+
+function md5sumtouch() {
+  local FILES=$*
+  if [ -z "${FILES}" ]; then
+    echo 'usage: md5sumtouch [file]'
+    return
+  fi
+  md5sum ${FILES}
+  md5sum ${FILES} | cut -d" " -f1 | xargs touch
+}
