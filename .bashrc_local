@@ -26,5 +26,4 @@ fi
 if [[ -d $HOME/.ndenv ]]; then
   export PATH="$HOME/.ndenv/bin:$PATH"
   eval "$(ndenv init -)"
-  exec $SHELL -l
 fi
