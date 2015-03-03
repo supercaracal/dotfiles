@@ -37,6 +37,9 @@ NeoBundle 'Shougo/neosnippet'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'h1mesuke/vim-alignta'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'slim-template/vim-slim'
+NeoBundle 'w0ng/vim-hybrid'
 
 filetype plugin indent on
 
@@ -56,7 +59,12 @@ if has("syntax")
   syntax on
 endif
 
-colorscheme koehler
+" colorscheme elflord
+" colorscheme koehler
+" colorscheme desert
+
+let g:hybrid_use_Xresources = 1
+colorscheme hybrid
 
 set cmdheight=2
 set laststatus=2
