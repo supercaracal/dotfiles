@@ -113,3 +113,7 @@ vnoremap x "+x
 noremap p "+p
 noremap dd "+dd
 noremap <silent><Leader>tl :TlistToggle<CR>
+
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby', 'javascript'], 'passive_filetypes': [] }
+let g:syntastic_ruby_checkers = ['rubocop']
+let g:syntastic_javascript_checkers = ['jshint']
