@@ -1,6 +1,10 @@
 export HISTSIZE=10000
 alias ll='ls -alF'
 
+if [[ -e $HOME/.Xmodmap ]]; then
+  xmodmap $HOME/.Xmodmap
+fi
+
 if [[ -n $(find /usr/share/terminfo -name 'gnome-256color') ]]; then
   export TERM='gnome-256color'
 fi
