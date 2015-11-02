@@ -9,8 +9,6 @@
 " vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv "
 
 " bundle plugin ~~~~~~~~~~~~~~~~~~~~~~~~~
-set nocompatible
-
 if has('vim_starting')
   if &compatible
     set nocompatible
