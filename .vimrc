@@ -12,12 +12,14 @@
 set nocompatible
 
 if has('vim_starting')
+  if &compatible
+    set nocompatible
+  endif
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
 call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
-call neobundle#end()
 
 NeoBundle 'Shougo/vimproc.vim', {
 \ 'build' : {
@@ -40,6 +42,8 @@ NeoBundle 'h1mesuke/vim-alignta'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'slim-template/vim-slim'
 NeoBundle 'w0ng/vim-hybrid'
+
+call neobundle#end()
 
 filetype plugin indent on
 
@@ -64,6 +68,7 @@ endif
 " colorscheme desert
 
 let g:hybrid_use_Xresources = 1
+set background=dark
 colorscheme hybrid
 
 set cmdheight=2
