@@ -31,3 +31,7 @@ if [[ -d $HOME/.ndenv ]]; then
   export PATH="$HOME/.ndenv/bin:$PATH"
   eval "$(ndenv init -)"
 fi
+
+if [[ -d $HOME/.gotools ]]; then
+  export GOPATH="$HOME/.gotools"
+fi
