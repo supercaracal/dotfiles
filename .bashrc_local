@@ -1,4 +1,6 @@
 export HISTSIZE=10000
+export EDITOR=$(which vim)
+
 alias ll='ls -alF'
 
 if [[ -e $HOME/.Xmodmap ]]; then
