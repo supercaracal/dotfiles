@@ -8,7 +8,7 @@
 "        `8'       o888o o8o        o888o o888o  o888o  `Y8bood8P'  "
 " vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv "
 
-" bundle plugin ~~~~~~~~~~~~~~~~~~~~~~~~~
+" plugins ~~~~~~~~~~~~~~~~~~~~~~~~~
 if has('vim_starting')
   if &compatible
     set nocompatible
@@ -45,8 +45,6 @@ call dein#add('majutsushi/tagbar')
 call dein#end()
 
 filetype plugin indent on
-
-NeoBundleCheck
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 set encoding=utf-8
