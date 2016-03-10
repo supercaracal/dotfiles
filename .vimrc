@@ -19,6 +19,7 @@ endif
 
 call dein#begin(expand('~/.cache/dein'))
 
+call dein#add('~/.vim/dein/repos/github.com/Shougo/dein.vim')
 call dein#add('Shougo/vimproc.vim', {
 \ 'build' : {
 \     'windows' : 'tools\\update-dll-mingw',
@@ -28,8 +29,6 @@ call dein#add('Shougo/vimproc.vim', {
 \     'unix' : 'gmake',
 \    },
 \ })
-
-call dein#add('.vim/dein/repos/github.com/Shougo/dein.vim')
 call dein#add('sakuraiyuta/commentout.vim')
 call dein#add('Shougo/neocomplcache')
 call dein#add('Shougo/neosnippet')
