@@ -13,13 +13,13 @@ if has('vim_starting')
   if &compatible
     set nocompatible
   endif
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+
+  set runtimepath^=~/.vim/dein/repos/github.com/Shougo/dein.vim
 endif
 
-call neobundle#begin(expand('~/.vim/bundle/'))
-NeoBundleFetch 'Shougo/neobundle.vim'
+call dein#begin(expand('~/.cache/dein'))
 
-NeoBundle 'Shougo/vimproc.vim', {
+call dein#add('Shougo/vimproc.vim', {
 \ 'build' : {
 \     'windows' : 'tools\\update-dll-mingw',
 \     'cygwin' : 'make -f make_cygwin.mak',
@@ -27,22 +27,22 @@ NeoBundle 'Shougo/vimproc.vim', {
 \     'linux' : 'make',
 \     'unix' : 'gmake',
 \    },
-\ }
+\ })
 
-NeoBundle 'gmarik/vundle'
-NeoBundle 'sakuraiyuta/commentout.vim'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'h1mesuke/vim-alignta'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'slim-template/vim-slim'
-NeoBundle 'w0ng/vim-hybrid'
-NeoBundle 'fatih/vim-go'
-NeoBundle 'majutsushi/tagbar'
+call dein#add('.vim/dein/repos/github.com/Shougo/dein.vim')
+call dein#add('sakuraiyuta/commentout.vim')
+call dein#add('Shougo/neocomplcache')
+call dein#add('Shougo/neosnippet')
+call dein#add('Shougo/neosnippet-snippets')
+call dein#add('itchyny/lightline.vim')
+call dein#add('h1mesuke/vim-alignta')
+call dein#add('scrooloose/syntastic')
+call dein#add('slim-template/vim-slim')
+call dein#add('w0ng/vim-hybrid')
+call dein#add('fatih/vim-go')
+call dein#add('majutsushi/tagbar')
 
-call neobundle#end()
+call dein#end()
 
 filetype plugin indent on
 
