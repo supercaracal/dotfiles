@@ -37,3 +37,7 @@ fi
 if [[ -d $HOME/.gotools ]]; then
   export GOPATH="$HOME/.gotools"
 fi
+
+if [[ -d $HOME/.embulk ]]; then
+  export PATH="$HOME/.embulk/bin:$PATH"
+fi
