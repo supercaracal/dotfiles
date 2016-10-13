@@ -34,6 +34,11 @@ if [[ -d $HOME/.ndenv ]]; then
   eval "$(ndenv init -)"
 fi
 
+if [[ -d $HOME/.jenv ]]; then
+  export PATH="$HOME/.jenv/bin:$PATH"
+  eval "$(jenv init -)"
+fi
+
 if [[ -d $HOME/.gotools ]]; then
   export GOPATH="$HOME/.gotools"
 fi
