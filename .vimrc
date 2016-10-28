@@ -35,7 +35,7 @@ call dein#add('Shougo/neosnippet')
 call dein#add('Shougo/neosnippet-snippets')
 call dein#add('itchyny/lightline.vim')
 call dein#add('h1mesuke/vim-alignta')
-call dein#add('scrooloose/syntastic')
+call dein#add('neomake/neomake')
 call dein#add('slim-template/vim-slim')
 call dein#add('w0ng/vim-hybrid')
 call dein#add('fatih/vim-go')
@@ -118,8 +118,10 @@ noremap <silent><Leader>t :TagbarToggle<CR>
 
 au FileType go nmap <leader>r <Plug>(go-run)
 
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby', 'javascript', 'scss', 'go'], 'passive_filetypes': [] }
-let g:syntastic_ruby_checkers = ['rubocop']
-let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_scss_checkers = ['scss_lint']
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+autocmd! BufWritePost * Neomake
+let g:neomake_javascript_enabled_makers = ['jshint']
+let g:neomake_ruby_enabled_makers = ['rubocop']
+let g:neomake_scss_enabled_makers = ['scsslint']
+" TODO: Add errcheck
+" https://www.higebu.com/blog/2016/05/11/2016-05-11-linting-go-code-with-neovim-and-neomake/#.WBK_ud8xDJ8
+let g:neomake_go_enabled_makers = ['golint', 'govet']
