@@ -19,27 +19,19 @@ endif
 
 call dein#begin(expand('~/.cache/dein'))
 
-call dein#add('~/.vim/dein/repos/github.com/Shougo/dein.vim')
-call dein#add('Shougo/vimproc.vim', {
-\ 'build' : {
-\     'windows' : 'tools\\update-dll-mingw',
-\     'cygwin' : 'make -f make_cygwin.mak',
-\     'mac' : 'make -f make_mac.mak',
-\     'linux' : 'make',
-\     'unix' : 'gmake',
-\    },
-\ })
-call dein#add('sakuraiyuta/commentout.vim')
+call dein#add('Shougo/dein.vim')
+call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 call dein#add('Shougo/neocomplcache')
 call dein#add('Shougo/neosnippet')
 call dein#add('Shougo/neosnippet-snippets')
-call dein#add('itchyny/lightline.vim')
-call dein#add('h1mesuke/vim-alignta')
-call dein#add('scrooloose/syntastic')
-call dein#add('slim-template/vim-slim')
 call dein#add('w0ng/vim-hybrid')
+call dein#add('itchyny/lightline.vim')
+call dein#add('scrooloose/syntastic')
+call dein#add('h1mesuke/vim-alignta')
+call dein#add('slim-template/vim-slim')
 call dein#add('fatih/vim-go')
 call dein#add('majutsushi/tagbar')
+call dein#add('sakuraiyuta/commentout.vim')
 
 call dein#end()
 
