@@ -3,7 +3,7 @@ export EDITOR=$(which vim)
 
 alias ll='ls -alF'
 
-if [[ -e $HOME/.Xmodmap -a -n "${DISPLAY}" ]]; then
+if [[ -e $HOME/.Xmodmap -a -n $DISPLAY ]]; then
   xmodmap $HOME/.Xmodmap
 fi
 
