@@ -101,11 +101,7 @@ vnoremap { "zdi^V{<C-R>z}<ESC>
 vnoremap [ "zdi^V[<C-R>z]<ESC>
 vnoremap ( "zdi^V(<C-R>z)<ESC>
 vnoremap <silent><Leader>al :Align @1 =><CR>
-vnoremap y "+y
-vnoremap x "+x
 
-noremap p "+p
-noremap dd "+dd
 noremap <silent><Leader>t :TagbarToggle<CR>
 
 au FileType go nmap <leader>r <Plug>(go-run)
