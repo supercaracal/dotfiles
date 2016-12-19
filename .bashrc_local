@@ -17,26 +17,26 @@ if [[ -d /usr/lib/jvm/java-7-oracle ]]; then
 fi
 
 if [[ -d $HOME/.rbenv ]]; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
+  export PATH="$PATH:$HOME/.rbenv/bin"
   eval "$(rbenv init -)"
 fi
 
 if [[ -d $HOME/.ndenv ]]; then
-  export PATH="$HOME/.ndenv/bin:$PATH"
+  export PATH="$PATH:$HOME/.ndenv/bin"
   eval "$(ndenv init -)"
 fi
 
 if [[ -d $HOME/.jenv ]]; then
-  export PATH="$HOME/.jenv/bin:$PATH"
+  export PATH="$PATH:$HOME/.jenv/bin"
   eval "$(jenv init -)"
 fi
 
 if [[ -d /usr/local/go ]]; then
   mkdir -p $HOME/.local/bin
   export GOPATH="$HOME/.local"
-  export PATH="$GOPATH/bin:/usr/local/go/bin:$PATH"
+  export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"
 fi
 
 if [[ -d $HOME/.embulk ]]; then
-  export PATH="$HOME/.embulk/bin:$PATH"
+  export PATH="$PATH:$HOME/.embulk/bin"
 fi
