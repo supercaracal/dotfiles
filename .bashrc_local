@@ -32,11 +32,9 @@ if [[ -d $HOME/.jenv ]]; then
 fi
 
 if [[ -d /usr/local/go ]]; then
-  export PATH="/usr/local/go/bin:$PATH"
-fi
-
-if [[ -d $HOME/.gotools ]]; then
-  export GOPATH="$HOME/.gotools"
+  mkdir -p $HOME/.local/bin
+  export GOPATH="$HOME/.local"
+  export PATH="$GOPATH/bin:/usr/local/go/bin:$PATH"
 fi
 
 if [[ -d $HOME/.embulk ]]; then
