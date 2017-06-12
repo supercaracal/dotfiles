@@ -31,6 +31,10 @@ if [[ -d $HOME/.jenv ]]; then
   eval "$(jenv init -)"
 fi
 
+if [[ -d $HOME/.tfenv ]]; then
+  export PATH="$PATH:$HOME/.tfenv/bin"
+fi
+
 if [[ -d /usr/local/go ]]; then
   mkdir -p $HOME/.local/bin
   export GOPATH="$HOME/.local"
