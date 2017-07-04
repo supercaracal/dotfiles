@@ -108,3 +108,7 @@ let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_scss_checkers = ['scss_lint']
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+
+" add jbuilder syntax highlighting
+au BufNewFile,BufRead *.json.jbuilder set ft=ruby
+au BufWrite *.hcl,*.tf :TerraformFmt
