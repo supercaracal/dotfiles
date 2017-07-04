@@ -8,35 +8,36 @@
 "        `8'       o888o o8o        o888o o888o  o888o  `Y8bood8P'  "
 " vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv "
 
-" plugins ~~~~~~~~~~~~~~~~~~~~~~~~~
-if has('vim_starting')
-  if &compatible
-    set nocompatible
-  endif
-
-  set runtimepath^=~/.vim/dein/repos/github.com/Shougo/dein.vim
+if &compatible
+  set nocompatible
 endif
 
-call dein#begin(expand('~/.cache/dein'))
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
-call dein#add('Shougo/dein.vim')
-call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
-call dein#add('Shougo/neocomplcache')
-call dein#add('Shougo/neosnippet')
-call dein#add('Shougo/neosnippet-snippets')
-call dein#add('w0ng/vim-hybrid')
-call dein#add('itchyny/lightline.vim')
-call dein#add('scrooloose/syntastic')
-call dein#add('h1mesuke/vim-alignta')
-call dein#add('slim-template/vim-slim')
-call dein#add('fatih/vim-go')
-call dein#add('majutsushi/tagbar')
-call dein#add('sakuraiyuta/commentout.vim')
+if dein#load_state(expand('~/.cache/dein'))
+  call dein#begin(expand('~/.cache/dein'))
 
-call dein#end()
+  call dein#add('Shougo/dein.vim')
+  call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
+  call dein#add('Shougo/neocomplcache')
+  call dein#add('Shougo/neosnippet')
+  call dein#add('Shougo/neosnippet-snippets')
+  call dein#add('w0ng/vim-hybrid')
+  call dein#add('itchyny/lightline.vim')
+  call dein#add('scrooloose/syntastic')
+  call dein#add('h1mesuke/vim-alignta')
+  call dein#add('slim-template/vim-slim')
+  call dein#add('fatih/vim-go')
+  call dein#add('majutsushi/tagbar')
+  call dein#add('sakuraiyuta/commentout.vim')
+  call dein#add('hashivim/vim-hashicorp-tools')
+
+  call dein#end()
+  call dein#save_state()
+endif
 
 filetype plugin indent on
-" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+syntax enable
 
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp932,euc-jp,latin1,default
@@ -46,10 +47,6 @@ set backspace=indent,eol,start
 " find /usr/share/terminfo -name '*256*'
 " vim ~/.bashrc
 " export TERM="gnome-256color"
-
-if has("syntax")
-  syntax on
-endif
 
 " colorscheme elflord
 " colorscheme koehler
