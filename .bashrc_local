@@ -12,14 +12,12 @@ if [[ -n $(find /usr/share/terminfo -name 'gnome-256color') ]]; then
   export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 fi
 
-if [[ -d /usr/lib/jvm/java-7-oracle ]]; then
-  export JAVA_HOME="/usr/lib/jvm/java-7-oracle"
+if [[ $(ls /usr/lib/jvm/java-*-* 2> /dev/null) ]]; then
+  export JAVA_HOME="$(ls -d /usr/lib/jvm/* | sort -d -r | head -n 1)"
 fi
 
-if [[ -d /usr/local/go ]]; then
-  mkdir -p $HOME/.local/bin
-  export GOPATH="$HOME/.local"
-  export PATH="$PATH:/usr/local/go/bin:$GOPATH/bin"
+if [[ -d $HOME/.embulk ]]; then
+  export PATH="$PATH:$HOME/.embulk/bin"
 fi
 
 if [[ -d $HOME/.jenv ]]; then
@@ -41,6 +39,10 @@ if [[ -d $HOME/.tfenv ]]; then
   export PATH="$PATH:$HOME/.tfenv/bin"
 fi
 
-if [[ -d $HOME/.embulk ]]; then
-  export PATH="$PATH:$HOME/.embulk/bin"
+if [[ -d /usr/local/go ]]; then
+  mkdir -p $HOME/.local/bin
+  export GOPATH="$HOME/.local"
+  export PATH="$PATH:/usr/local/go/bin"
 fi
+
+export PATH="$PATH:$HOME/.local/bin"
