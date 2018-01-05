@@ -35,6 +35,12 @@ if [[ -d $HOME/.rbenv ]]; then
   eval "$(rbenv init -)"
 fi
 
+if [[ -d $HOME/.pyenv ]]; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PATH:$PYENV_ROOT/bin"
+  eval "$(pyenv init -)"
+fi
+
 if [[ -d $HOME/.tfenv ]]; then
   export PATH="$PATH:$HOME/.tfenv/bin"
 fi
