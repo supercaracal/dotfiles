@@ -1,3 +1,0 @@
-#!/bin/bash -x
-
-vimdiff $6 $7

@@ -1,5 +1,0 @@
-#!/bin/bash
-
-function decode_multibyte_chars() {
-  perl -nle 's/\\x(..)/pack("C",hex($1))/eg;print $_'
-}
