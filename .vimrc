@@ -103,10 +103,11 @@ noremap <silent><Leader>t :TagbarToggle<CR>
 
 au FileType go nmap <leader>r <Plug>(go-run)
 
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby', 'javascript', 'scss', 'go', 'cpp'], 'passive_filetypes': [] }
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby', 'javascript', 'scss', 'slim', 'go', 'cpp'], 'passive_filetypes': [] }
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_scss_checkers = ['scss_lint']
+let g:syntastic_slim_checkers = ['slim_lint']
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_cpp_cpplint_exec = 'cpplint'
 let g:syntastic_cpp_checkers = ['cpplint']
