@@ -1,12 +1,13 @@
 [user]
     name = Taishi Kasuga
     email = supercaracal@yahoo.com
+    signingkey = FDB4FAD0FEB1B46F2EFFAA3CAFDBF17438A0042C
 [diff]
     external = gitvimdiff
 [pager]
     diff =
 [alias]
-    logg = log --oneline --format=format:'%cn\t[%h]\t%ar\t%s'
+    logg = log --oneline --format=format:'%cn\t%G?\t[%h]\t%ar\t%s'
 [color]
     ui = auto
 [push]
