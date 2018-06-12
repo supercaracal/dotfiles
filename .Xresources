@@ -1,7 +1,7 @@
 ! Hybrid Terminal Colours. Uses the palette from Tomorrow-Night:
 ! https://github.com/chriskempson/tomorrow-theme/blob/master/vim/colors/Tomorrow-Night.vim
 ! vim: ft=xdefaults
- 
+
 *background: #1D1F21
 *foreground: #C5C8C6
 ! black
