@@ -71,3 +71,5 @@ function delete_remote_merged_branches() {
     echo ${delete_branches[@]}
   fi
 }
+
+export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
