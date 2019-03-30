@@ -37,6 +37,7 @@ if dein#load_state(expand('~/.cache/dein'))
   call dein#add('majutsushi/tagbar')
   call dein#add('sakuraiyuta/commentout.vim')
   call dein#add('hashivim/vim-hashicorp-tools')
+  call dein#add('leafgarland/typescript-vim')
 
   call dein#end()
   call dein#save_state()
