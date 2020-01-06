@@ -25,6 +25,11 @@ if [[ -d $HOME/.jenv ]]; then
   eval "$(jenv init -)"
 fi
 
+if [[ -d $HOME/.ndenv ]]; then
+  export PATH="$PATH:$HOME/.ndenv/bin"
+  eval "$(ndenv init -)"
+fi
+
 if [[ -d $HOME/.nodenv ]]; then
   export PATH="$PATH:$HOME/.nodenv/bin"
   eval "$(nodenv init -)"
