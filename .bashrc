@@ -1,5 +1,6 @@
 export HISTSIZE=10000
 export EDITOR=$(which vim)
+export TZ="Asia/Tokyo"
 termemu="gnome-256color"
 
 alias ll='ls -alF'
@@ -10,7 +11,13 @@ fi
 
 if [[ -n $(find /usr/share/terminfo -name "$termemu") ]]; then
   export TERM="$termemu"
-  export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+
+  if [[ -d $HOME/vcs/git ]]; then
+    . ~/vcs/git/contrib/completion/git-prompt.sh
+    export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;35m\]$(__git_ps1)\[\033[00m\]\$ '
+  else
+    export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+  fi
 fi
 
 if [[ $(ls /usr/lib/jvm/java-*-* 2> /dev/null) ]]; then
