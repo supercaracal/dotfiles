@@ -64,6 +64,18 @@ if [[ -d /usr/local/go ]]; then
   export PATH="$PATH:/usr/local/go/bin"
 fi
 
+if [[ -d /usr/local/kubebuilder ]]; then
+  export PATH="$PATH:/usr/local/kubebuilder/bin"
+fi
+
+if type kubectl > /dev/null 2>&1; then
+  source <(kubectl completion bash)
+fi
+
+if type kind > /dev/null 2>&1; then
+  source <(kind completion bash)
+fi
+
 export PATH="$PATH:$HOME/.local/bin"
 
 function delete_local_branches() {
