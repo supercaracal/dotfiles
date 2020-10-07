@@ -118,6 +118,6 @@ let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_cpp_cpplint_exec = 'cpplint'
 let g:syntastic_cpp_checkers = ['cpplint']
 
-" add jbuilder syntax highlighting
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
-au BufWrite *.hcl,*.tf :TerraformFmt
+au BufNewFile,BufRead *.pkr.hcl set ft=terraform
+au BufWrite *.pkr.hcl,*.tf :TerraformFmt
