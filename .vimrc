@@ -38,6 +38,8 @@ if dein#load_state(expand('~/.cache/dein'))
   call dein#add('sakuraiyuta/commentout.vim')
   call dein#add('hashivim/vim-hashicorp-tools')
   call dein#add('leafgarland/typescript-vim')
+  call dein#add('google/vim-jsonnet')
+  call dein#add('fgsch/vim-varnish')
 
   call dein#end()
   call dein#save_state()
