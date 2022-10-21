@@ -122,4 +122,4 @@ let g:syntastic_cpp_checkers = ['cpplint']
 
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 au BufNewFile,BufRead *.pkr.hcl set ft=terraform
-au BufWrite *.pkr.hcl,*.tf :TerraformFmt
+au BufWrite *.pkr.hcl,*.tf,*.tfvars :TerraformFmt
