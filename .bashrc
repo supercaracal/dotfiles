@@ -98,3 +98,4 @@ function delete_remote_merged_branches() {
 }
 
 export CLOUD_SDK_REPO="cloud-sdk-$(lsb_release -c -s)"
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
