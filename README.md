@@ -22,6 +22,7 @@ $ sudo apt install\
   bison\
   universal-ctags\
   xz-utils\
+  linux-source\
   zlib1g-dev\
   libbz2-dev\
   libffi-dev\
@@ -34,7 +35,8 @@ $ sudo apt install\
   libssl-dev\
   libc++-dev\
   libevent-dev\
-  libyaml-dev
+  libyaml-dev\
+  libelf-dev
 ```
 
 * https://github.com/git/git
