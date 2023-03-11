@@ -14,6 +14,7 @@ $ sudo apt install\
   llvm\
   gdb\
   jq\
+  bc\
   tree\
   autoconf\
   automake\
