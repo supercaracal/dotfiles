@@ -15,6 +15,7 @@ ctags\
   --exclude=tmp\
   --exclude=log\
   --exclude=git\
+  --exclude=WSL2-Linux-Kernel\
   -Rf\
   $HOME/$TMPFILE\
   $SRC_DIRS
