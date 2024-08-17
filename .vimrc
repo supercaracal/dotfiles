@@ -40,6 +40,7 @@ if dein#load_state(expand('~/.cache/dein'))
   call dein#add('leafgarland/typescript-vim')
   call dein#add('google/vim-jsonnet')
   call dein#add('fgsch/vim-varnish')
+  call dein#add('hashivim/vim-terraform')
 
   call dein#end()
   call dein#save_state()
@@ -111,7 +112,7 @@ noremap <silent><Leader>t :TagbarToggle<CR>
 
 au FileType go nmap <leader>r <Plug>(go-run)
 
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby', 'javascript', 'scss', 'slim', 'go', 'cpp'], 'passive_filetypes': [] }
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby', 'javascript', 'scss', 'slim', 'go', 'cpp', 'tf'], 'passive_filetypes': [] }
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_scss_checkers = ['scss_lint']

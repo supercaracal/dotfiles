@@ -1,7 +1,6 @@
 [user]
     name = Taishi Kasuga
     email = supercaracal@yahoo.com
-    signingkey = FDB4FAD0FEB1B46F2EFFAA3CAFDBF17438A0042C
 [diff]
     external = gitvimdiff
 [pager]
@@ -12,3 +11,5 @@
     ui = auto
 [push]
     default = nothing
+[init]
+    defaultBranch = main
