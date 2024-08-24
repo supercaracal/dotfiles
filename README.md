@@ -73,3 +73,12 @@ $ cat /etc/docker/daemon.json
 :VimProcInstall
 :GoInstallBinaries
 ```
+
+```
+$ cat /etc/wsl.conf
+[boot]
+systemd=true
+
+[interop]
+appendWindowsPath = false
+```
