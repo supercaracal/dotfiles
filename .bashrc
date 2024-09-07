@@ -20,8 +20,9 @@ if [[ -n $(find /usr/share/terminfo -name "$termemu") ]]; then
   fi
 fi
 
-if [[ $(ls /usr/lib/jvm/java-*-* 2> /dev/null) ]]; then
+if [[ $(ls -d /usr/lib/jvm/* 2> /dev/null) ]]; then
   export JAVA_HOME="$(ls -d /usr/lib/jvm/* | sort -d -r | head -n 1)"
+  export PATH="$PATH:$JAVA_HOME/bin"
 fi
 
 if [[ -d $HOME/.embulk ]]; then
