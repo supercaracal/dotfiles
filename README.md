@@ -69,8 +69,6 @@ $ cat /etc/docker/daemon.json
 ```
 
 ```
-:call dein#update()
-:VimProcInstall
 :GoInstallBinaries
 ```
 
