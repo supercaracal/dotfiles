@@ -8,46 +8,55 @@
 "        `8'       o888o o8o        o888o o888o  o888o  `Y8bood8P'  "
 " vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv "
 
-if &compatible
-  set nocompatible
+let $CACHE = expand('~/.cache')
+if !($CACHE->isdirectory())
+  call mkdir($CACHE, 'p')
 endif
-
-set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
-
-if dein#load_state(expand('~/.cache/dein'))
-  call dein#begin(expand('~/.cache/dein'))
-
-  call dein#add('~/.cache/dein')
-  call dein#add('Shougo/deoplete.nvim')
-  if !has('nvim')
-    call dein#add('roxma/nvim-yarp')
-    call dein#add('roxma/vim-hug-neovim-rpc')
+if &runtimepath !~# '/dein.vim'
+  let s:dir = 'dein.vim'->fnamemodify(':p')
+  if !(s:dir->isdirectory())
+    let s:dir = $CACHE .. '/dein/repos/github.com/Shougo/dein.vim'
+    if !(s:dir->isdirectory())
+      execute '!git clone https://github.com/Shougo/dein.vim' s:dir
+    endif
   endif
-  call dein#add('Shougo/dein.vim')
-  call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
-  call dein#add('Shougo/neocomplcache')
-  call dein#add('Shougo/neosnippet')
-  call dein#add('Shougo/neosnippet-snippets')
-  call dein#add('w0ng/vim-hybrid')
-  call dein#add('itchyny/lightline.vim')
-  call dein#add('scrooloose/syntastic')
-  call dein#add('h1mesuke/vim-alignta')
-  call dein#add('slim-template/vim-slim')
-  call dein#add('fatih/vim-go')
-  call dein#add('majutsushi/tagbar')
-  call dein#add('sakuraiyuta/commentout.vim')
-  call dein#add('hashivim/vim-hashicorp-tools')
-  call dein#add('leafgarland/typescript-vim')
-  call dein#add('google/vim-jsonnet')
-  call dein#add('fgsch/vim-varnish')
-  call dein#add('hashivim/vim-terraform')
-
-  call dein#end()
-  call dein#save_state()
+  execute 'set runtimepath^='
+        \ .. s:dir->fnamemodify(':p')->substitute('[/\\]$', '', '')
 endif
 
-filetype plugin indent on
-syntax enable
+set nocompatible
+
+let s:dein_base = '~/.cache/dein/'
+let s:dein_src = '~/.cache/dein/repos/github.com/Shougo/dein.vim'
+
+execute 'set runtimepath+=' .. s:dein_src
+
+call dein#begin(s:dein_base)
+call dein#add(s:dein_src)
+call dein#add('w0ng/vim-hybrid')
+call dein#add('itchyny/lightline.vim')
+call dein#add('scrooloose/syntastic')
+call dein#add('h1mesuke/vim-alignta')
+call dein#add('slim-template/vim-slim')
+call dein#add('fatih/vim-go')
+call dein#add('majutsushi/tagbar')
+call dein#add('sakuraiyuta/commentout.vim')
+call dein#add('hashivim/vim-hashicorp-tools')
+call dein#add('leafgarland/typescript-vim')
+call dein#add('google/vim-jsonnet')
+call dein#add('fgsch/vim-varnish')
+call dein#add('hashivim/vim-terraform')
+call dein#end()
+
+filetype indent plugin on
+
+if has('syntax')
+  syntax on
+endif
+
+if dein#check_install()
+ call dein#install()
+endif
 
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp932,euc-jp,latin1,default
@@ -90,10 +99,6 @@ set ignorecase
 set wildignorecase
 
 set tags=~/.tags
-
-let g:neocomplcache_enable_at_startup=1
-let g:neocomplcache_enable_smart_case=1
-let g:neocomplcache_enable_underbar_completion=1
 
 let Tlist_WinWidth=40
 let Tlist_Exit_OnlyWindow=1

@@ -1,0 +1,32 @@
+syntax enable
+
+colorscheme elflord
+
+set fileencodings=ucs-bom,utf-8,cp932,euc-jp,latin1,default
+set backspace=indent,eol,start
+
+set cmdheight=2
+set laststatus=2
+set showcmd
+
+set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
+highlight StatusLine ctermfg=black ctermbg=white
+
+set nowrap
+set nobackup
+set noswapfile
+
+set autoindent
+set expandtab
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
+
+set number
+set list
+set lcs=tab:^^,eol:~
+
+set hlsearch
+set incsearch
+set ignorecase
+set wildignorecase
