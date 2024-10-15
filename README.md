@@ -24,6 +24,7 @@ $ sudo apt install\
   bison\
   universal-ctags\
   xz-utils\
+  jsonnet\
   linux-source\
   zlib1g-dev\
   libbz2-dev\
