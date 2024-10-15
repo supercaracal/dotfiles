@@ -10,6 +10,7 @@ $ sudo apt install\
   ncurses-term\
   build-essential\
   make\
+  cmake\
   clang\
   llvm\
   gdb\
@@ -37,13 +38,17 @@ $ sudo apt install\
   libc++-dev\
   libevent-dev\
   libyaml-dev\
-  libelf-dev
+  libelf-dev\
+  python3-dev
 ```
 
 * https://github.com/git/git
 * https://docs.docker.com/engine/install/ubuntu/
 * https://go.dev/doc/install
 * https://github.com/rbenv/rbenv
+* https://github.com/nodenv/nodenv
+* https://jdk.java.net/
+* https://github.com/ycm-core/YouCompleteMe?tab=readme-ov-file#linux-64-bit
 
 ```
 $ gem install\
@@ -70,6 +75,7 @@ $ cat /etc/docker/daemon.json
 
 ```
 :GoInstallBinaries
+:call dein#recache_runtimepath()
 ```
 
 ```

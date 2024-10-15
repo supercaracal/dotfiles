@@ -35,17 +35,15 @@ call dein#begin(s:dein_base)
 call dein#add(s:dein_src)
 call dein#add('w0ng/vim-hybrid')
 call dein#add('itchyny/lightline.vim')
+call dein#add('ycm-core/YouCompleteMe')
 call dein#add('scrooloose/syntastic')
-call dein#add('h1mesuke/vim-alignta')
-call dein#add('slim-template/vim-slim')
-call dein#add('fatih/vim-go')
-call dein#add('majutsushi/tagbar')
-call dein#add('sakuraiyuta/commentout.vim')
-call dein#add('hashivim/vim-hashicorp-tools')
-call dein#add('leafgarland/typescript-vim')
 call dein#add('google/vim-jsonnet')
-call dein#add('fgsch/vim-varnish')
+call dein#add('hashivim/vim-hashicorp-tools')
 call dein#add('hashivim/vim-terraform')
+call dein#add('fatih/vim-go')
+call dein#add('fgsch/vim-varnish')
+call dein#add('leafgarland/typescript-vim')
+call dein#add('slim-template/vim-slim')
 call dein#end()
 
 filetype indent plugin on
@@ -61,15 +59,6 @@ endif
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp932,euc-jp,latin1,default
 set backspace=indent,eol,start
-
-" sudo apt-get install ncurses-term
-" find /usr/share/terminfo -name '*256*'
-" vim ~/.bashrc
-" export TERM="gnome-256color"
-
-" colorscheme elflord
-" colorscheme koehler
-" colorscheme desert
 
 let g:hybrid_custom_term_colors = 1
 set background=dark
@@ -100,24 +89,15 @@ set wildignorecase
 
 set tags=~/.tags
 
-let Tlist_WinWidth=40
-let Tlist_Exit_OnlyWindow=1
-let Tlist_Show_One_File=1
-
 inoremap { {}<LEFT>
 inoremap [ []<LEFT>
 inoremap ( ()<LEFT>
 
-vnoremap { "zdi^V{<C-R>z}<ESC>
-vnoremap [ "zdi^V[<C-R>z]<ESC>
-vnoremap ( "zdi^V(<C-R>z)<ESC>
-vnoremap <silent><Leader>al :Align @1 =><CR>
-
-noremap <silent><Leader>t :TagbarToggle<CR>
-
-au FileType go nmap <leader>r <Plug>(go-run)
-
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby', 'javascript', 'scss', 'slim', 'go', 'cpp', 'tf'], 'passive_filetypes': [] }
+let g:syntastic_mode_map = {
+  \'mode': 'passive',
+  \'active_filetypes': ['ruby', 'javascript', 'scss', 'slim', 'go', 'cpp', 'tf'],
+  \'passive_filetypes': []
+  \}
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_scss_checkers = ['scss_lint']
