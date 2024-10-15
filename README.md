@@ -25,6 +25,8 @@ $ sudo apt install\
   universal-ctags\
   xz-utils\
   jsonnet\
+  unzip\
+  python3-dev\
   linux-source\
   zlib1g-dev\
   libbz2-dev\
@@ -39,8 +41,7 @@ $ sudo apt install\
   libc++-dev\
   libevent-dev\
   libyaml-dev\
-  libelf-dev\
-  python3-dev
+  libelf-dev
 ```
 
 * https://github.com/git/git

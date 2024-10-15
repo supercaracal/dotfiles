@@ -9,9 +9,11 @@
 " vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv "
 
 let $CACHE = expand('~/.cache')
+
 if !($CACHE->isdirectory())
   call mkdir($CACHE, 'p')
 endif
+
 if &runtimepath !~# '/dein.vim'
   let s:dir = 'dein.vim'->fnamemodify(':p')
   if !(s:dir->isdirectory())
