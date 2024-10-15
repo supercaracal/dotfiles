@@ -105,6 +105,7 @@ let g:syntastic_slim_checkers = ['slim_lint']
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_cpp_cpplint_exec = 'cpplint'
 let g:syntastic_cpp_checkers = ['cpplint']
+let g:go_code_completion_enabled = 0
 
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 au BufNewFile,BufRead *.pkr.hcl set ft=terraform
