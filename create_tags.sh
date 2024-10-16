@@ -12,6 +12,7 @@ ctags\
   --exclude=.git\
   --exclude=node_modules\
   --exclude=.bundle\
+  --exclude=.terraform\
   --exclude=tmp\
   --exclude=log\
   --exclude=git\
