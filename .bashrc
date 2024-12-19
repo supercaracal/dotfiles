@@ -65,6 +65,10 @@ if [[ -d /usr/local/go ]]; then
   export PATH="$PATH:/usr/local/go/bin"
 fi
 
+if [[ -d $HOME/.cargo ]]; then
+  export PATH="$PATH:$HOME/.cargo/bin"
+fi
+
 if [[ -d /usr/local/kubebuilder ]]; then
   export PATH="$PATH:/usr/local/kubebuilder/bin"
 fi
