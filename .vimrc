@@ -46,6 +46,7 @@ call dein#add('fatih/vim-go')
 call dein#add('fgsch/vim-varnish')
 call dein#add('leafgarland/typescript-vim')
 call dein#add('slim-template/vim-slim')
+call dein#add('rust-lang/rust.vim')
 call dein#end()
 
 filetype indent plugin on
@@ -97,17 +98,15 @@ inoremap ( ()<LEFT>
 
 let g:syntastic_mode_map = {
   \'mode': 'passive',
-  \'active_filetypes': ['ruby', 'javascript', 'scss', 'slim', 'go', 'cpp', 'tf'],
+  \'active_filetypes': ['ruby', 'go', 'cpp', 'tf'],
   \'passive_filetypes': []
   \}
 let g:syntastic_ruby_checkers = ['rubocop']
-let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_scss_checkers = ['scss_lint']
-let g:syntastic_slim_checkers = ['slim_lint']
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_cpp_cpplint_exec = 'cpplint'
 let g:syntastic_cpp_checkers = ['cpplint']
 let g:go_code_completion_enabled = 0
+let g:rustfmt_autosave = 1
 
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 au BufNewFile,BufRead *.pkr.hcl set ft=terraform
