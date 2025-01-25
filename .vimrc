@@ -92,6 +92,8 @@ set wildignorecase
 
 set tags=~/.tags
 
+set completeopt-=preview
+
 inoremap { {}<LEFT>
 inoremap [ []<LEFT>
 inoremap ( ()<LEFT>
@@ -107,7 +109,6 @@ let g:syntastic_cpp_cpplint_exec = 'cpplint'
 let g:syntastic_cpp_checkers = ['cpplint']
 let g:go_code_completion_enabled = 0
 let g:rustfmt_autosave = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
 
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 au BufNewFile,BufRead *.pkr.hcl set ft=terraform
