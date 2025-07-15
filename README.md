@@ -88,3 +88,11 @@ systemd=true
 [interop]
 appendWindowsPath = false
 ```
+
+```
+$ head -n 4 .ssh/config
+ServerAliveInterval 60
+ServerAliveCountMax 10
+HostkeyAlgorithms +ssh-rsa
+PubkeyAcceptedAlgorithms +ssh-rsa
+```
