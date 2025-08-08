@@ -51,6 +51,7 @@ $ sudo apt install\
 * https://github.com/nodenv/nodenv
 * https://jdk.java.net/
 * https://github.com/ycm-core/YouCompleteMe?tab=readme-ov-file#linux-64-bit
+  * `:call dein#recache_runtimepath()`
 
 ```
 $ gem install\
