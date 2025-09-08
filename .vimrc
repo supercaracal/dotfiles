@@ -112,4 +112,5 @@ let g:rustfmt_autosave = 1
 
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 au BufNewFile,BufRead *.pkr.hcl set ft=terraform
+au BufNewFile,BufRead *.tsp set ft=typescript
 au BufWrite *.pkr.hcl,*.tf,*.tfvars :TerraformFmt
