@@ -85,6 +85,10 @@ if type ko > /dev/null 2>&1; then
   source <(ko completion bash)
 fi
 
+if type direnv > /dev/null 2>&1; then
+  eval "$(direnv hook bash)"
+fi
+
 export PATH="$PATH:$HOME/.local/bin"
 
 function delete_local_branches() {
