@@ -92,13 +92,13 @@ fi
 export PATH="$PATH:$HOME/.local/bin"
 
 function delete_local_branches() {
-  git branch | grep -v '*\|master\|HEAD' | xargs git branch -D
+  git branch | grep -v '*\|main\|master\|HEAD' | xargs git branch -D
 }
 
 function delete_remote_merged_branches() {
   local check_only=$1
   local delete_branches=()
-  for branch in $(git branch -r --merged | grep -v "*\|main\|master\|develop\|HEAD" | sed -e "s/origin\///g" | sort | uniq); do
+  for branch in $(git branch -r --merged | grep -v "*\|main\|master\|HEAD" | sed -e "s/origin\///g" | sort | uniq); do
     delete_branches=("${delete_branches[@]}" ":${branch}")
   done
   if [ -z "$(echo ${delete_branches[@]})" ]; then
