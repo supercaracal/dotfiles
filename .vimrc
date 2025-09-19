@@ -111,6 +111,6 @@ let g:go_code_completion_enabled = 0
 let g:rustfmt_autosave = 1
 
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
-au BufNewFile,BufRead *.pkr.hcl set ft=terraform
+au BufNewFile,BufRead *.hcl set ft=terraform
 au BufNewFile,BufRead *.tsp set ft=typescript
-au BufWrite *.pkr.hcl,*.tf,*.tfvars :TerraformFmt
+au BufWrite *.tf,*.tfvars,*.hcl :TerraformFmt
