@@ -3,33 +3,23 @@ My dotfiles
 
 ```
 $ sudo apt update
-```
-
-```
 $ sudo apt install\
-  ncurses-term\
-  build-essential\
-  make\
-  cmake\
-  clang\
-  llvm\
-  gdb\
-  jq\
-  bc\
-  tree\
   autoconf\
   automake\
-  pkg-config\
-  flex\
+  bc\
   bison\
-  universal-ctags\
-  xz-utils\
+  build-essential\
+  clang\
+  cmake\
+  cpplint\
+  flex\
+  gdb\
+  jq\
   jsonnet\
-  unzip\
-  python3-dev\
-  linux-source\
-  zlib1g-dev\
   libbz2-dev\
+  libc++-dev\
+  libelf-dev\
+  libevent-dev\
   libffi-dev\
   libmysqld-dev\
   libncurses5-dev\
@@ -38,10 +28,18 @@ $ sudo apt install\
   libreadline-dev\
   libsqlite3-dev\
   libssl-dev\
-  libc++-dev\
-  libevent-dev\
   libyaml-dev\
-  libelf-dev
+  linux-source\
+  llvm\
+  make\
+  ncurses-term\
+  pkg-config\
+  python3-dev\
+  tree\
+  universal-ctags\
+  unzip\
+  xz-utils\
+  zlib1g-dev
 ```
 
 * https://github.com/git/git
