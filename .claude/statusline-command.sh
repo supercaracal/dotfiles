@@ -1,4 +1,4 @@
-#\!/bin/bash
+#!/bin/bash
 
 input=$(cat)
 
@@ -7,6 +7,10 @@ model=$(echo "$input" | jq -r '.model.display_name // empty')
 effort=$(echo "$input" | jq -r '.effort.level // empty')
 cost=$(echo "$input" | jq -r '.cost.total_cost_usd // empty')
 duration_ms=$(echo "$input" | jq -r '.cost.total_duration_ms // empty')
+in_tokens=$(echo "$input" | jq -r '.context_window.current_usage.input_tokens // empty')
+out_tokens=$(echo "$input" | jq -r '.context_window.current_usage.output_tokens // empty')
+worktree_name=$(echo "$input" | jq -r '.worktree.name // empty')
+thinking=$(echo "$input" | jq -r '.thinking.enabled // false')
 
 git_branch=""
 if [ -n "$cwd" ] && git -C "$cwd" rev-parse --git-dir > /dev/null 2>&1; then
@@ -19,7 +23,7 @@ task_label=""
 transcript=$(echo "$input" | jq -r '.transcript_path // empty')
 if [ -n "$transcript" ] && [ -f "$transcript" ]; then
   first_prompt=$(jq -rs '[.[] | select(.type == "user")] | first | .message.content | if type == "array" then (map(select(.type == "text")) | first | .text) else . end' "$transcript" 2>/dev/null)
-  if [ -n "$first_prompt" ] && [ "$first_prompt" \!= "null" ]; then
+  if [ -n "$first_prompt" ] && [ "$first_prompt" != "null" ]; then
     task_label=$(printf '%.50s' "$first_prompt")
     [ ${#first_prompt} -gt 50 ] && task_label="${task_label}..."
   fi
@@ -27,6 +31,15 @@ fi
 if [ -z "$task_label" ]; then
   task_label=$(echo "$input" | jq -r '.session_name // empty')
 fi
+
+fmt_k() {
+  local n=$1
+  if [ "$n" -ge 1000 ] 2>/dev/null; then
+    printf '%dk' "$((n / 1000))"
+  else
+    printf '%s' "$n"
+  fi
+}
 
 parts=()
 
@@ -36,6 +49,10 @@ if [ -n "$model" ]; then
   else
     parts+=("$(printf '\033[37m%s\033[0m' "$model")")
   fi
+fi
+
+if [ -n "$worktree_name" ]; then
+  parts+=("$(printf '\033[1;33m[wt:%s]\033[0m' "$worktree_name")")
 fi
 
 if [ -n "$cwd" ]; then
@@ -62,6 +79,16 @@ if [ -n "$used_pct" ]; then
   else
     parts+=("$(printf '\033[36m%s %s%%\033[0m' "$BAR" "$used_int")")
   fi
+fi
+
+if [ -n "$in_tokens" ] && [ -n "$out_tokens" ]; then
+  in_fmt=$(fmt_k "$in_tokens")
+  out_fmt=$(fmt_k "$out_tokens")
+  parts+=("$(printf '\033[36min:%s out:%s\033[0m' "$in_fmt" "$out_fmt")")
+fi
+
+if [ "$thinking" = "true" ]; then
+  parts+=("$(printf '\033[35mthink\033[0m')")
 fi
 
 if [ -n "$cost" ]; then
