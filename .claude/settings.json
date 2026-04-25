@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(~/.ssh)",
+      "Read(~/.aws)",
+      "Bash(sudo *)",
+      "Bash(su *)"
+    ],
+    "allow": [
+      "Read",
+      "Edit",
+      "Bash",
+      "WebFetch",
+      "Agent",
+      "mcp__claude_ai"
+    ],
+    "defaultMode": "dontAsk"
+  },
+  "disableBypassPermissionsMode": "disable",
+  "effortLevel": "high",
+  "model": "sonnet",
+  "sandbox": {
+    "enabled": true
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash ~/.claude/statusline-command.sh"
+  }
+}
