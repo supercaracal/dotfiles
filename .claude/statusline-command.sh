@@ -24,8 +24,18 @@ transcript=$(echo "$input" | jq -r '.transcript_path // empty')
 if [ -n "$transcript" ] && [ -f "$transcript" ]; then
   first_prompt=$(jq -rs '[.[] | select(.type == "user")] | first | .message.content | if type == "array" then (map(select(.type == "text")) | first | .text) else . end' "$transcript" 2>/dev/null)
   if [ -n "$first_prompt" ] && [ "$first_prompt" != "null" ]; then
-    task_label=$(printf '%.50s' "$first_prompt")
-    [ ${#first_prompt} -gt 50 ] && task_label="${task_label}..."
+    task_label=$(python3 -c "
+import sys, unicodedata
+def truncate(s, max_w=200):
+    out, w = [], 0
+    for c in s:
+        cw = 2 if unicodedata.east_asian_width(c) in ('W', 'F') else 1
+        if w + cw > max_w:
+            return ''.join(out) + '...'
+        out.append(c); w += cw
+    return ''.join(out)
+print(truncate(sys.stdin.read().rstrip('\n')))
+    " <<< "$first_prompt")
   fi
 fi
 if [ -z "$task_label" ]; then
