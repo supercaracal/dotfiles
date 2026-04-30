@@ -32,6 +32,12 @@
         "static.crates.io",
         "registry.npmjs.org"
       ]
+    },
+    "write": {
+      "allowedPaths": [
+        "~/.cargo",
+        "~/.npm"
+      ]
     }
   },
   "effortLevel": "high",
