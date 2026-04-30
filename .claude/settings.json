@@ -24,9 +24,13 @@
   "sandbox": {
     "enabled": true,
     "network": {
-      "allow": [
+      "allowedDomains": [
         "github.com",
-        "api.github.com"
+        "api.github.com",
+        "crates.io",
+        "index.crates.io",
+        "static.crates.io",
+        "registry.npmjs.org"
       ]
     }
   },
