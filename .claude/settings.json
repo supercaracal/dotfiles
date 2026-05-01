@@ -1,12 +1,13 @@
 {
   "model": "sonnet",
   "effortLevel": "high",
-  "disableBypassPermissionsMode": "disable",
+  "disableBypassPermissionsMode": true,
   "statusLine": {
     "type": "command",
     "command": "bash ~/.claude/statusline-command.sh"
   },
   "permissions": {
+    "defaultMode": "dontAsk",
     "allow": [
       "Read",
       "Write",
@@ -21,20 +22,15 @@
       "Read(~/.aws)",
       "Bash(sudo *)",
       "Bash(su *)"
-    ],
-    "defaultMode": "dontAsk"
+    ]
   },
   "sandbox": {
     "enabled": true,
-    "network": {
-      "allowedDomains": [
-        "github.com",
-        "*.github.com",
-        "crates.io",
-        "*.crates.io",
-        "registry.npmjs.org"
-      ]
-    },
+    "excludedCommands": [
+      "git *",
+      "docker *",
+      "gh *"
+    ],
     "filesystem": {
       "allowWrite": [
         "~/.cargo",
@@ -44,6 +40,16 @@
         "~/.cargo",
         "~/.npm",
         "~/.ssh/known_hosts"
+      ]
+    },
+    "network": {
+      "allowAllUnixSockets": true,
+      "allowedDomains": [
+        "github.com",
+        "*.github.com",
+        "crates.io",
+        "*.crates.io",
+        "*.npmjs.org"
       ]
     }
   }
