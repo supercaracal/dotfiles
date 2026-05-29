@@ -50,6 +50,9 @@
       "gh *"
     ]
   },
+  "env": {
+    "CLAUDE_CODE_DISABLE_ALTERNATE_SCREEN": "1"
+  },
   "effortLevel": "xhigh",
   "theme": "dark",
   "disableBypassPermissionsMode": true
